@@ -1,6 +1,5 @@
 from flask import Response
 from flask import request
-from json import dumps
 from models import Hotel
 from models import Review
 import datetime
@@ -9,10 +8,6 @@ import jsonutil
 import random
 
 
-
-def json_response(values):
-  '''This functions gets some list or dict and return in via WSGI in JSON format.'''
-  return Response(dumps(values), mimetype='application/json')
 
 def home():
   return redirect(url_for('list_hotels'))
